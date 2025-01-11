@@ -17,7 +17,7 @@ func (e EmptyBufferErr) Error() string {
 	return fmt.Sprint("No space in buffer to read!")
 }
 
-// TODO: Add a Read([]byte) (int, error) method to MyReader.
+// Add a Read([]byte) (int, error) method to MyReader.
 func (mr MyReader) Read(b []byte) (int, error) {
 	// Only give error when given slice is nil
 	if b == nil {
