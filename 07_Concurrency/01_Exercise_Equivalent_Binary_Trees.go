@@ -25,9 +25,9 @@ func Walk(t *tree.Tree, ch chan int) {
 // Same determines whether the trees
 // t1 and t2 contain the same values.
 func Same(t1, t2 *tree.Tree) bool {
-	// Create 2 buffered channels for 2 trees (since we know both will have exactly 10 values)
-	ch1 := make(chan int, 10)
-	ch2 := make(chan int, 10)
+	// Create 2 channels for 2 trees (No need of buffered, as each send and receive is blocking for the one of the parties and there are only 2 in this case)
+	ch1 := make(chan int)
+	ch2 := make(chan int)
 	
 	// Start the parallel execution of Walk() for both the trees in background
 	go Walk(t1, ch1)
