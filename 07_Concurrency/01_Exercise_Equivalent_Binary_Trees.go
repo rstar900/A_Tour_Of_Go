@@ -15,7 +15,7 @@ func Walk(t *tree.Tree, ch chan int) {
 		return
 	}
 	
-	// Otherwise walk to from the left subtree current, and right one (inorder traversal)
+	// Otherwise walk to the left subtree, the current one, and then the right one (inorder traversal)
 	
 	Walk(t.Left, ch) 	// Left Subtree
 	ch <- t.Value    	// Current Subtree
