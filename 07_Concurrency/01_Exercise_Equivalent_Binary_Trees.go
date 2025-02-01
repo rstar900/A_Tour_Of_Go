@@ -29,7 +29,7 @@ func Same(t1, t2 *tree.Tree) bool {
 	ch1 := make(chan int)
 	ch2 := make(chan int)
 	
-	// Start the parallel execution of Walk() for both the trees in background
+	// Start the concurrent execution of Walk() for both the trees in background
 	go Walk(t1, ch1)
 	go Walk(t2, ch2)
 	
